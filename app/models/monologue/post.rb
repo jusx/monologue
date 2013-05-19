@@ -2,7 +2,8 @@ class Monologue::Post < ActiveRecord::Base
   has_many :posts_revisions, dependent: :destroy
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
-
+  has_many :categories
+  
   belongs_to :user
 
   accepts_nested_attributes_for :posts_revisions
