@@ -43,6 +43,21 @@ describe Monologue::Post do
       @post.reload.tags.size.should eq(1)
     end
   end
+  
+  describe "posts and categories" do
+    before(:each) do
+      @category = Factory(:category)
+      @category2 = Factory(:category2)
+    end
+    
+    it "can add multiple categories" do
+      @post.categories = [@category, @category2]
+      @post.should be_valid
+      @post.save
+      
+      @post.reload.categories.size.should eq(2)
+    end
+  end
 
 end
 #
