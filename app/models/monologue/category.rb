@@ -1,7 +1,9 @@
 # Category of a post.
 class Monologue::Category < ActiveRecord::Base
-  has_many :posts
-  attr_accessible :name, :order
+  has_many :post_categories
+  has_many :posts, through: :post_categories
+  
+  attr_accessible :name
   validates :name, presence: true, uniqueness: true
   
   

@@ -2,7 +2,8 @@ class Monologue::Post < ActiveRecord::Base
   has_many :posts_revisions, dependent: :destroy
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
-  has_many :categories
+  has_many :post_categories
+  has_many :categories, through: :post_categories, dependent: :destroy
   
   belongs_to :user
 

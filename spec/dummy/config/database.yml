@@ -1,6 +1,9 @@
 development:
-  adapter: mysql2
-  encoding: utf8
+  adapter: sqlite3
+  database: db/development.sqlite3
+    # 
+    # adapter: mysql2
+    # encoding: utf8
   reconnect: false
   database: monologue_development
   pool: 5
@@ -8,8 +11,11 @@ development:
   password:
 
 test:
-  adapter: mysql2
-  encoding: utf8
+  adapter: sqlite3
+  database: db/development.sqlite3
+
+  # adapter: mysql2
+  # encoding: utf8
   reconnect: false
   database: monologue_test
   pool: 5
