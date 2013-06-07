@@ -12,4 +12,8 @@ FactoryGirl.define do
     name "life"
   end
   
+  factory :category_with_post, class: Monologue::Category, parent: :category do |cat|
+    cat.after_create { |u| Factory(:post, category: u) }
+  end
+  
 end

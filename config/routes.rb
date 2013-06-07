@@ -12,6 +12,7 @@ Monologue::Engine.routes.draw do
     resources :sessions
     resources :posts
     resources :users
+    resources :categories
     get "comments" => "comments#show", as: "comments"
 
     get "cache" => "cache#show", as: "cache"
